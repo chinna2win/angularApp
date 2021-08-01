@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'myapp';
+  title = 'Hello World';
+  jsonValue = {
+    a: "hello",
+    b: "world"
+  }
+
+  newDate = new Date();
+  handleEvent() {
+    console.log("Button Clicked", this.title)
+  }
 }
