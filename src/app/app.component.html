@@ -1,14 +1,20 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<h1>{{title | uppercase}}</h1>
+<!-- <h1>{{title | uppercase}}</h1>
 <h1>{{jsonValue | json}}</h1>
 <h1>{{newDate | date :"yyyy/mm/dd hh:mm"}}</h1>
 <button (click)="handleEvent()">Click Me</button>
-<input placeholder="hello" [(ngModel)]="title"/>
-    
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<input placeholder="hello" [(ngModel)]="title"/> -->
+
+<input placeholder="user" [(ngModel)]="userObject.name">
+<input placeholder="user" [(ngModel)]="userObject.age">
+<input placeholder="user" [(ngModel)]="userObject.id">
+
+<ng-container *ngIf="showUser">
+<app-user [user] = "userObject" (userCustomEvent) = "handleEvent($event)"></app-user>
+</ng-container>
+
+<ul *ngFor="let item of (posts | async); let i = index">    
+    <li>Index: {{i}}</li>
+    <li>{{item.id}}</li>    
+    <li>{{item.title}}</li>
+    <li>{{item.body}}</li>
+</ul>
